@@ -27,7 +27,31 @@ public class Main {
         int[] nums2 = {2,3,4,6,8};
         Arrays.sort(nums2);
         System.out.println(nums2.length);
+        //arrays 3.0 multi
+        int[][] nums3 = new int[2][3];
+        nums3[0][0] = 1;
+        System.out.println(Arrays.deepToString(nums3));
+        //arrays 4.0
+        int[][] nums4 = {{1,2,3},{4,5,6}};
+        System.out.println(Arrays.deepToString(nums4));
+        //contants
+        final float PI = 3.14F;
+        //arithmetic
+        int result = 10+3;
+        double result2 = 10/3;
+        int x = 1;
+        ++x;
+        x+=2;
+        System.out.println(result + result2 + PI + x);
+        //casting
+        double val1 = 1.1;
+        int y = (int)val1 + 2;
+        System.out.println(y);
+        //casting 2.0
+        String val2 = "1";
+        int z = Integer.parseInt(val2) + 2;
+        System.out.println(z);
         //
-        
+
     }
 }
