@@ -29,7 +29,18 @@ public class Main {
         int money = 120_000;
         String className = money > 100_000 ? "First" : "Economy";
         System.out.println(className);
-        //Swicth Statements
+        //Swicth statements
+        String role = "admin";
+        switch (role){
+            case "admin":
+                System.out.println("you are admin");
+                break;
+            case "moderator":
+                System.out.println("you are moderator");
+                break;
+            default:
+                System.out.println("you are guest");
+        }
         
 
 
