@@ -1,5 +1,7 @@
 package control_flow;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){    
         //comparison operators
@@ -41,8 +43,47 @@ public class Main {
             default:
                 System.out.println("you are guest");
         }
+        //for loops
+        for (int i = 0; i < 5; i++){
+            System.out.println("WOW");
+        }
+            //i--
+        //while loops
+        String input = "";
+        Scanner in = new Scanner(System.in);
+        while (!input.equals("quit")){
+            System.out.print("Input: ");
+            input = in.next().toLowerCase();
+            System.out.println(input);
+        }
+        in.close();
+        //Do..While Loops
+        do{
+            System.out.print("Input: ");
+            input = in.next().toLowerCase();
+            System.out.println(input);
+        }while (!input.equals("quit"));
+        in.close();
+        //Break & Continue statements
+        String input2 = "";
+        Scanner in2 = new Scanner(System.in);
+        while (true){
+            System.out.print("Input: ");
+            input2 = in2.next().toLowerCase();
+            if (input2.equals("pass")){
+                continue;
+            }else if (input2.equals("quit")){
+                break;
+            }
+            System.out.println(input2);
+        }
+        in2.close();
+        //For Each Loop
+        String[] fruits = {"Apple", "Orange", "Mango"};
+        for (String fruit : fruits){
+            System.out.println(fruit);
+        }
         
-
 
     }
 }
