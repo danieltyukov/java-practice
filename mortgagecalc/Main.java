@@ -4,12 +4,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        final byte MONTHS_IN_YEAR = 12;
-        final byte PERCENT = 100;
-
         int principal = 0;
-        float monthlyInterest = 0;
-        int numberOfPayments = 0;
+        float annuelInterest = 0;
+        byte years = 0;
 
         Scanner in = new Scanner(System.in);
 
@@ -27,10 +24,9 @@ public class Main {
         while (true) {
 
             System.out.print("Annual Interest Rate: ");
-            float annuelInterest = in.nextFloat();
+            annuelInterest = in.nextFloat();
 
             if(annuelInterest >= 1 && annuelInterest <=30){
-                monthlyInterest = annuelInterest / PERCENT / MONTHS_IN_YEAR;
                 break;
             }
 
@@ -40,19 +36,28 @@ public class Main {
         while (true) {
 
             System.out.print("Period (Years): ");
-            byte years = in.nextByte();
+            years = in.nextByte();
             if (years >= 1 && years <= 30){
-                numberOfPayments = years * MONTHS_IN_YEAR;
                 break;
             }
         }
 
+        double mortgage = calculateMortgage(principal, annuelInterest, years);
+        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.println("Mortgage: "+mortgageFormatted);
+        in.close();
+    }
+    public static double calculateMortgage(int principal, float annuelInterest, byte years){
+        final byte MONTHS_IN_YEAR = 12;
+        final byte PERCENT = 100;
+        short numberOfPayments = (short)(years * MONTHS_IN_YEAR);
+        float monthlyInterest = annuelInterest / PERCENT / MONTHS_IN_YEAR;
+        
         double mortgage = principal * (monthlyInterest * 
         Math.pow(1+monthlyInterest,numberOfPayments)) / 
         (Math.pow(1+monthlyInterest,numberOfPayments) - 1);
 
-        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Mortgage: "+mortgageFormatted);
-        in.close();
+        return mortgage;
+
     }
 }
