@@ -1,5 +1,6 @@
 package classes;
 
+//creating classes
 public class Employee {
 
   private int baseSalary;
@@ -12,6 +13,7 @@ public class Employee {
     this(baseSalary, 0);
   }
 
+  //overloading constructors
   public Employee(int baseSalary, int hourlyRate) {
     setBaseSalary(baseSalary);
     setHourlyRate(hourlyRate);
@@ -19,6 +21,9 @@ public class Employee {
   }
 
   //Referenced Objects
+  //Only static methods can be referenced and used directly
+  //value is independent of all objects
+  //static methods can only see other static methods
   public static void printNumberOfEmployees() {
     System.out.println(numberOfEmployees);
   }
@@ -39,9 +44,9 @@ public class Employee {
     this.baseSalary = baseSalary;
   }
 
-  private int getBaseSalary() {
-    return baseSalary;
-  }
+  // private int getBaseSalary() {
+  //   return baseSalary;
+  // }
 
   private int getHourlyRate() {
     return hourlyRate;
