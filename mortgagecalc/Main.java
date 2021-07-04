@@ -9,9 +9,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int principal = (int) readNumber("Principal: ", 1000, 1_000_000);
-        float annuelInterest = (float) readNumber("Annual Interest Rate: ", 1, 30);
-        byte years = (byte) readNumber("Period (Years): ", 1, 30);
+        Scanner in = new Scanner(System.in);
+
+        int principal = (int) readNumber("Principal: ", 1000, 1_000_000, in);
+        float annuelInterest = (float) readNumber("Annual Interest Rate: ", 1, 30, in);
+        byte years = (byte) readNumber("Period (Years): ", 1, 30, in);
+        in.close();
 
         printMortgage(principal, annuelInterest, years);
         printPaymentSchedule(principal, annuelInterest, years);
@@ -37,9 +40,8 @@ public class Main {
         }
     }
 
-    public static double readNumber(String prompt, double min, double max) {
+    public static double readNumber(String prompt, double min, double max, Scanner in) {
 
-        Scanner in = new Scanner(System.in);
         double value;
         while (true) {
 
@@ -57,20 +59,21 @@ public class Main {
 
     public static double calculateBalance(int principal, float annuelInterest, byte years, short numberOfPaymentsMade) {
 
-        float numberOfPayments = (short) (years * MONTHS_IN_YEAR);
         float monthlyInterest = annuelInterest / PERCENT / MONTHS_IN_YEAR;
+        float numberOfPayments = years * MONTHS_IN_YEAR;
 
-        double balance = principal * (Math.pow(1 + monthlyInterest, numberOfPayments))
-                - Math.pow(1 + monthlyInterest, numberOfPaymentsMade)
-                        / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
+        double balance = principal
+                * (Math.pow(1 + monthlyInterest, numberOfPayments)
+                        - Math.pow(1 + monthlyInterest, numberOfPaymentsMade))
+                / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
         return balance;
 
     }
 
     public static double calculateMortgage(int principal, float annuelInterest, byte years) {
 
-        float numberOfPayments = (short) (years * MONTHS_IN_YEAR);
         float monthlyInterest = annuelInterest / PERCENT / MONTHS_IN_YEAR;
+        float numberOfPayments = years * MONTHS_IN_YEAR;
 
         double mortgage = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
