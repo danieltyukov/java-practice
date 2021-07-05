@@ -1,5 +1,6 @@
 package mortgagecalc;
 
+//Here we demonstrate a good object oriented development for the project
 public class Main {
 
   public static void main(String[] args) {
