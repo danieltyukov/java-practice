@@ -4,6 +4,8 @@ import java.text.NumberFormat;
 
 public class MortgageReport {
 
+  //initiazlied variables and one of them is locally and finally iniazied when the
+  //contractor is called
   private final NumberFormat currency;
   private MortgageCalculator calculator;
 

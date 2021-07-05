@@ -2,13 +2,16 @@ package mortgagecalc;
 
 public class MortgageCalculator {
 
+  //private final variables only used by static methods
   private static final byte MONTHS_IN_YEAR = 12;
   private static final byte PERCENT = 100;
 
+  //initiazlized variables used in this class
   private int principal;
   private float annualInterest;
   private byte years;
 
+  //here tehy are initialized
   public MortgageCalculator(int principal, float annualInterest, byte years) {
     this.principal = principal;
     this.annualInterest = annualInterest;
@@ -44,9 +47,9 @@ public class MortgageCalculator {
 
   public double[] getRemainingBalances() {
     var balances = new double[getNumberOfPayments()];
-    for (short month = 1; month <= balances.length; month++) balances[month -
-      1] =
-      calculateBalance(month);
+    for (short month = 1; month <= balances.length; month++) {
+      balances[month - 1] = calculateBalance(month);
+    }
 
     return balances;
   }
