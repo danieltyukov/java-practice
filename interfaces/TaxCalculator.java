@@ -6,6 +6,7 @@ package interfaces;
 public interface TaxCalculator {
   double calculateTax();
 
+  //static is a new feature that is not respected
   static double getTaxabaleIncome(double income, double expenses) {
     return income - expenses;
   }
