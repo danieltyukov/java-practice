@@ -9,3 +9,7 @@ public class Main {
     for (var control : controls) control.render();
   }
 }
+/* The super keyword is a reference to the base or parent class. 
+We can use it to access the members (fields and methods) or call the 
+constructors of the base class. In contrast, the this keyword returns 
+a reference to the current object.  */
