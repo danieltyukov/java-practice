@@ -1,4 +1,4 @@
-package com.codewithmosh.collections;
+package collections;
 
 import java.util.HashMap;
 import java.util.Map;

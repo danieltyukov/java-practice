@@ -1,4 +1,4 @@
-package com.codewithmosh.collections;
+package collections;
 
 public class Customer implements Comparable<Customer> {
   private String name;
