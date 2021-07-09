@@ -1,4 +1,4 @@
-package com.codewithmosh.lambdas;
+package lambdas;
 
 import java.util.function.UnaryOperator;
 

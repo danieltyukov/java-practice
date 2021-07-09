@@ -1,4 +1,4 @@
-package com.codewithmosh.lambdas;
+package lambdas;
 
 public class ConsolePrinter implements Printer {
   @Override
