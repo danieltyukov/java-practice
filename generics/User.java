@@ -1,4 +1,4 @@
-package com.codewithmosh.generics;
+package generics;
 
 public class User implements Comparable<User> {
   private int points;

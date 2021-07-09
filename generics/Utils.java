@@ -1,4 +1,4 @@
-package com.codewithmosh.generics;
+package generics;
 
 public class Utils {
   public static <T extends Comparable<T>> T max(T first, T second) {

@@ -1,4 +1,4 @@
-package com.codewithmosh.generics;
+package generics;
 
 public class Instructor extends User {
   public Instructor(int points) {

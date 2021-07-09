@@ -1,4 +1,4 @@
-package com.codewithmosh.generics;
+package generics;
 
 public class List {
   private Object[] items = new Object[10];

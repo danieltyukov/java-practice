@@ -1,4 +1,4 @@
-package com.codewithmosh.generics;
+package generics;
 
 public class KeyValuePair<K, V> {
   private K key;

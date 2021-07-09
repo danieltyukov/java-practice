@@ -1,4 +1,4 @@
-package com.codewithmosh.generics;
+package generics;
 
 public class UserList {
   private User[] items = new User[10];

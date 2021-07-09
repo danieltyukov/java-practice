@@ -1,4 +1,4 @@
-package com.codewithmosh.generics;
+package generics;
 
 import java.util.Iterator;
 
