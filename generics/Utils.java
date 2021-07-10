@@ -1,6 +1,7 @@
 package generics;
 
 public class Utils {
+
   public static <T extends Comparable<T>> T max(T first, T second) {
     return (first.compareTo(second) < 0) ? second : first;
   }
@@ -13,8 +14,7 @@ public class Utils {
     System.out.println(user);
   }
 
-  public static void printUsers
-        (GenericList<? extends User> users) {
+  public static void printUsers(GenericList<? extends User> users) {
     Object x = users.get(0);
   }
 }

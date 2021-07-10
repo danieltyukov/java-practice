@@ -3,6 +3,7 @@ package generics;
 import java.util.Iterator;
 
 public class GenericList<T> implements Iterable<T> {
+
   private T[] items = (T[]) new Object[10];
   private int count;
 
@@ -20,6 +21,7 @@ public class GenericList<T> implements Iterable<T> {
   }
 
   private class ListIterator implements Iterator<T> {
+
     private GenericList<T> list;
     private int index;
 

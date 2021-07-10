@@ -1,6 +1,7 @@
 package generics;
 
 public class User implements Comparable<User> {
+
   private int points;
 
   public User(int points) {
@@ -16,5 +17,4 @@ public class User implements Comparable<User> {
   public String toString() {
     return "Points=" + points;
   }
-
 }
