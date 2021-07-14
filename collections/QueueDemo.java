@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class QueueDemo {
+
   public static void show() {
     Queue<String> queue = new ArrayDeque<>();
     queue.add("c");
@@ -16,7 +17,6 @@ public class QueueDemo {
 
     System.out.println(front);
     System.out.println(queue);
-
     // We have alternative methods that don't
     // throw an exception:
 

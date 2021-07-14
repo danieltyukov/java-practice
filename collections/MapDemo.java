@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MapDemo {
+
   public static void show() {
     var c1 = new Customer("a", "e1");
     var c2 = new Customer("b", "e2");
@@ -20,13 +21,10 @@ public class MapDemo {
 
     map.replace("e1", new Customer("a++", "e1"));
 
-    for (var key : map.keySet())
-      System.out.println(key);
+    for (var key : map.keySet()) System.out.println(key);
 
-    for (var value : map.values())
-      System.out.println(value);
+    for (var value : map.values()) System.out.println(value);
 
-    for (var entry : map.entrySet())
-      System.out.println(entry);
+    for (var entry : map.entrySet()) System.out.println(entry);
   }
 }
