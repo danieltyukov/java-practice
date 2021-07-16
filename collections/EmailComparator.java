@@ -2,6 +2,7 @@ package collections;
 
 import java.util.Comparator;
 
+//we implement the Compereator interface
 public class EmailComparator implements Comparator<Customer> {
 
   @Override

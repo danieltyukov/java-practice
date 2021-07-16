@@ -19,12 +19,15 @@ public class ListDemo {
     Collections.addAll(list, "a", "b", "c");
 
     var first = list.get(0);
+    System.out.println(first);
     list.set(0, "!!");
 
     list.remove(0);
 
     var index = list.indexOf("a");
     var lastIndex = list.lastIndexOf("a");
+
+    System.out.println(index + lastIndex);
 
     System.out.println(list.subList(0, 2));
   }
