@@ -9,6 +9,7 @@ public class ThreadDemo {
     // or using an instance of a class that implements the Runnable interface
     var status = new DownloadStatus();
     var thread2 = new Thread(new DownloadFileTask(status));
+    thread2.start();
 
     // Next we start a thread
     thread1.start();
@@ -22,7 +23,8 @@ public class ThreadDemo {
 
     // We can put a thread to sleep
     try {
-      thread1.sleep(5000);
+      // thread1.sleep(5000);
+      Thread.sleep(5000);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
