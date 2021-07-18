@@ -16,5 +16,6 @@ public class Utils {
 
   public static void printUsers(GenericList<? extends User> users) {
     Object x = users.get(0);
+    System.out.println(x);
   }
 }

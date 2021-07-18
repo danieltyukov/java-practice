@@ -4,7 +4,9 @@ import java.util.Iterator;
 
 public class GenericList<T> implements Iterable<T> {
 
+  @SuppressWarnings("unchecked")
   private T[] items = (T[]) new Object[10];
+
   private int count;
 
   public void add(T item) {
