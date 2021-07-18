@@ -3,7 +3,10 @@ package streams;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+// import java.util.Optional;
 
 public class StreamsDemo {
 
@@ -13,6 +16,9 @@ public class StreamsDemo {
       new Movies("b", 20),
       new Movies("c", 30)
     );
+
+    // Intermidiate Operations
+    // -----------------------
 
     //Mapping
     movies
@@ -53,6 +59,45 @@ public class StreamsDemo {
       .map(Movies::getLikes)
       .distinct()
       .forEach(System.out::println);
+    //Peeking Elements
+    movies
+      .stream()
+      .filter(m -> m.getLikes() > 10)
+      .peek(m -> System.out.println("filter: " + m.getTitle()))
+      .map(Movies::getTitle)
+      .peek(t -> System.out.println("map: " + t))
+      .forEach(System.out::println);
+
+    // Reducers Operations
+    // -------------------
+
+    //Matchers
+    //anyMatch, allMatch, noneMatch
+    var res = movies.stream().anyMatch(m -> m.getLikes() > 10);
+    System.out.println(res);
+    //findFirst
+    //findAny
+    var first = movies.stream().findFirst().get();
+    System.out.println(first.getTitle());
+    //max, min, count, sum, average, maxBy, minBy, countBy, sumBy, averageBy
+    var second = movies
+      .stream()
+      .max(Comparator.comparing(Movies::getLikes))
+      .get();
+    System.out.println(second.getTitle());
+    //Reducing a Stream
+    // Optional<Integer> sum = movies
+    //   .stream()
+    //   .map(m -> m.getLikes())
+    //   .reduce(0,Integer::sum);
+    // System.out.println(sum);
+    //Collectors
+    // //toSet, toList, toMap, toArray, toObjectArray, toString, toArrayList
+    movies
+      .stream()
+      .filter(m -> m.getLikes() > 10)
+      .map(Movies::getTitle)
+      .collect(Collectors.joining(", "));
   }
   // //The problem streams solve
   // List<Movie> movies = List.of(
