@@ -3,6 +3,17 @@ package concurrency;
 public class ThreadDemo {
 
   public static void show() {
+    //   var status = new DownloadStatus();
+    // //wait() and notify()
+    // var thread3 = new Thread(() -> {
+    //   while (!status.isDone()) {
+    //     synchronized (status) {
+    //       try {
+    //         status.wait();
+    //       } catch (InterruptedException e) {
+    //         e.printStackTrace();
+    //       }
+
     // We can create a thread using a lambda expression
     var thread1 = new Thread(() -> System.out.println("a"));
 
