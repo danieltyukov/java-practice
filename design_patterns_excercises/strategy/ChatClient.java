@@ -12,5 +12,6 @@ public class ChatClient {
     var encryptedMessage = encryptionAlgorithm.encrypt(message);
 
     System.out.println("Sending the encrypted message...");
+    System.out.println(encryptedMessage);
   }
 }
