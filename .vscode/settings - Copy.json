@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "github.copilot.autocomplete.enable": true,
+  "prettier.withNodeModules": true,
+  "editor.formatOnPaste": true
+}
