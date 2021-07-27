@@ -19,6 +19,7 @@ public class HistoryStorage {
     try {
       var fileStream = new FileInputStream("history.txt");
       var objectStream = new ObjectInputStream(fileStream);
+      System.out.println(objectStream);
       var history = (History) objectStream.readObject();
       return history;
     } catch (IOException | ClassNotFoundException e) {
